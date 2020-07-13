@@ -20,7 +20,7 @@
     {% if user.is_authenticated %}
         <div class="container">
             <div class="row" style="text-align: center; padding: 10px">
-                <a class="btn btn-info col-2" href="{% url 'edit_post' pk=post.pk %}">Edit</a>
+                <a class="btn btn-light col-2" href="{% url 'edit_post' pk=post.pk %}">Edit</a>
                 <div class="col-sm"></div>
                 <a class="btn btn-danger col-2" href="{% url 'remove_post' pk=post.pk %}">Remove</a>
             </div>

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Blog</title>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{#    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %} ">#}
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'css/medium-editor.css' %}">
     <script src="medium-editor.js"></script>
@@ -34,9 +35,14 @@
 
         <ul class="navbar-nav ml-auto" style="margin-top: auto">
             {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'create_post' %}">New Post</a></li>
+
+                <li class="nav-item"> <a class="nav-link" href="{% url 'create_post' %}">
+                    <i class="fa fa-plus"></i>
+                    New Post </a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'drafts' %}">Drafts</a></li>
-                <li class="nav-item"><p class="nav-link profile">Welcome: {{ user.username }}</p></li>
+                <li class="nav-item"><p class="nav-link profile">
+                    <span> <i class="fa fa-user"></i></span>
+                    Welcome: {{ user.username }}</p></li>
                 <li class="nav-item"><a class="btn btn-danger" href="{% url 'logout' %}">Logout</a></li>
             {% else %}
                 <li class="nav-item">

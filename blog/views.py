@@ -45,13 +45,20 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('posts')
 
 
-class Draft(LoginRequiredMixin, ListView):
-    login_url = '/login/'
-    redirect_field_name = 'blog/post_list'
+class Draft(LoginRequiredMixin, Post):
+    # login_url = '/login/'
+    # redirect_field_name = 'blog/post_list'
     model = Post
 
     # def get_queryset(self):
     #     return Post.objects.filter(publish_date__isnull=True)
+
+
+@login_required
+def draftview(request):
+
+    post = Post.objects.filter(public=False)
+    return render(request, 'blog/drafts_list.html', {'post': post, 'pk': Post.pk})
 
 
 def addCommentToPost(request, pk):

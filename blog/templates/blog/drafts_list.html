@@ -1,3 +1,22 @@
 {% extends 'blog/base.html' %}
 
+{% block body %}
+    {% if post %}
+        {% for object in post %}
+            <div class="card" style="background-color: #f1f1f1; margin: 10px;">
 
+                <a style="font-size: 20px" class="card-header"
+                   href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                <div class="card-body">
+                    <p class="date">Published: {{ object.publish_date }}</p>
+                    <p>Author: {{ object.author }}</p>
+                </div>
+
+            </div>
+        {% endfor %}
+     {% else %}
+        <h1 style="text-align: center">No Drafts!!</h1>
+    {% endif %}
+
+
+{% endblock %}

@@ -4,12 +4,13 @@
 
     {% for object in object_list %}
         {% if object.public %}
-            <div class="card" style="background-color: #f1f1f1; margin: 10px">
+            <div class="card" style="background-color: #f1f1f1; margin: 10px; padding-left: 10px; padding-right: 10px">
 
-                <a style="font-size: 20px" class="card-header"
+                <a style="font-size: 20px"
                    href="{{ object.get_absolute_url }}">{{ object.title }}</a>
-                <div class="card-body">
+                <div >
                     <p class="date">Published: {{ object.publish_date }}</p>
+                    <hr>
                     <p>Author: {{ object.author }}</p>
                 </div>
 
