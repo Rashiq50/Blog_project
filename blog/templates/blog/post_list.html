@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block body %}
+
+    {% for object in object_list %}
+        {% if object.public %}
+            <div class="card" style="background-color: #f1f1f1; margin: 10px">
+
+                <a style="font-size: 20px" class="card-header"
+                   href="{{ object.get_absolute_url }}">{{ object.title }}</a>
+                <div class="card-body">
+                    <p>Published: {{ object.publish_date|date:'D M Y' }}</p>
+                    <p>Author: {{ object.author }}</p>
+                </div>
+
+            </div>
+        {% endif %}
+
+
+    {% endfor %}
+
+{% endblock %}
