@@ -1,3 +1,19 @@
-h1{
-    color: crimson;
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+.profile{
+    font-weight: bold;
+}
+
+.date{
+    font-size: small;
+    color: #686868;
+    font-style: italic;
+}
+.jumbotron{
+    text-align: center;
+    padding: 100px;
+    margin-top: 30px;
 }

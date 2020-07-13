@@ -9,7 +9,7 @@
                 <a style="font-size: 20px" class="card-header"
                    href="{{ object.get_absolute_url }}">{{ object.title }}</a>
                 <div class="card-body">
-                    <p>Published: {{ object.publish_date|date:'D M Y' }}</p>
+                    <p class="date">Published: {{ object.publish_date }}</p>
                     <p>Author: {{ object.author }}</p>
                 </div>
 
